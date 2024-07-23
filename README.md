@@ -1,3 +1,3 @@
 # 19R
 
-![Mr.Bean](bean.jpg)
+![Mr.Bean](..\bean.jpg)
