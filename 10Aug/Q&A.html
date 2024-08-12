@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git and HTML Questions and Answers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .question {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .answer {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>HTML Questions and Answers</h2>
+
+    <div class="qa">
+        <div class="question">1. What is the difference between &lt;div&gt; and &lt;span&gt;?</div>
+        <div class="answer">
+            <b>&lt;div&gt; (Division):</b> Block-level element. Takes up the full width available, starting on a new line. Used for grouping large sections of HTML elements.<br>
+            <b>&lt;span&gt;:</b> Inline element. Takes up only as much width as necessary, does not start on a new line. Used for grouping small chunks of text or elements.
+        </div>
+
+        <div class="question">2. What are the semantic elements in HTML?</div>
+        <div class="answer">
+            Semantic elements clearly describe their meaning to both the browser and the developer. Examples include:
+            <ul>
+                <li>&lt;header&gt;</li>
+                <li>&lt;nav&gt;</li>
+                <li>&lt;section&gt;</li>
+                <li>&lt;article&gt;</li>
+                <li>&lt;aside&gt;</li>
+                <li>&lt;footer&gt;</li>
+                <li>&lt;main&gt;</li>
+            </ul>
+        </div>
+
+        <div class="question">3. What is the difference between href attribute and src attribute?</div>
+        <div class="answer">
+            <b>href (Hypertext Reference):</b> Used in &lt;a&gt; (anchor) tags to link to other pages or resources.<br>
+            <b>src (Source):</b> Used in elements like &lt;img&gt;, &lt;script&gt;, and &lt;iframe&gt; to embed external content.
+        </div>
+
+        <div class="question">4. What is the difference between XML and HTML?</div>
+        <div class="answer">
+            <b>XML (eXtensible Markup Language):</b> Designed to store and transport data. Strict rules for closing tags, case sensitivity, and nesting. Does not define how data is displayed.<br>
+            <b>HTML (HyperText Markup Language):</b> Designed to display data and structure web pages. Less strict, e.g., some tags can be left unclosed. Defines both the content and the layout of a webpage.
+        </div>
+
+        <div class="question">5. What are list tags and how many are they?</div>
+        <div class="answer">
+            There are three main types of list tags in HTML:
+            <ul>
+                <li><b>Ordered List (&lt;ol&gt;):</b> Creates a numbered list.</li>
+                <li><b>Unordered List (&lt;ul&gt;):</b> Creates a bulleted list.</li>
+                <li><b>Description List (&lt;dl&gt;):</b> Creates a list of terms with descriptions.</li>
+            </ul>
+        </div>
+
+        <div class="question">6. Create an &lt;iframe&gt; where a single iframe can open multiple links in it?</div>
+        <div class="answer">
+            Here’s an example of an &lt;iframe&gt; that can open multiple links:
+            <pre>
+                <code>
+                    <code>
+                        &lt;html&gt;
+                            &lt;head&gt;
+                                &lt;title&gt;
+                                    iframes
+                                &lt;/title&gt;
+                            &lt;/head&gt;
+                            &lt;body&gt;
+                                &lt;a href=&quot;https://th.bing.com/th/id/OIP.HQjU6VgBnh73dkZht68N-wHaGL?w=223&amp;h=186&amp;c=7&amp;r=0&amp;o=5&amp;dpr=1.4&amp;pid=1.7&quot;  target=&quot;e&quot;&gt;Elon&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;a href=&quot;https://www.youtube.com/embed/X7phS7CyRQk?si=A_hYPwsIVzXlP75E&quot; target=&quot;e&quot;&gt;Stuart little&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;a href=&quot;https://www.flipkart.com/&quot; target=&quot;e&quot;&gt;website&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;a href=&quot;https://en.wikipedia.org/wiki/Telugu_language&quot; target=&quot;e&quot;&gt;Web page&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;a href=&quot;25jLists.html&quot; target=&quot;e&quot;&gt;HTML file&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;a href=&quot;task.txt&quot; target=&quot;e&quot;&gt;Text file&lt;/a&gt;&lt;br&gt;
+                        
+                                &lt;iframe src=&quot;&quot; name=&quot;e&quot;&gt;&lt;/iframe&gt;
+                        
+                            &lt;/body&gt;
+                        &lt;/html&gt;
+                            </code>
+            </code></pre>
+        </div>
+
+        <div class="question">7. Create a registration form using name, email, age, privacy policies, and submit and do validations?</div>
+        <div class="answer">
+            Here’s an example of a registration form with validations:
+            <pre>
+                <code>
+                    &lt;!DOCTYPE html&gt;
+                    &lt;html lang=&quot;en&quot;&gt;
+                    &lt;head&gt;
+                        &lt;meta charset=&quot;UTF-8&quot;&gt;
+                        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+                        &lt;title&gt;Software Developer Job Application Form&lt;/title&gt;
+                    &lt;/head&gt;
+                    &lt;body&gt;
+                        &lt;h2 style=&quot;text-align: center;&quot;&gt;Software Developer Job Application Form&lt;/h2&gt;
+                    
+                        &lt;form action=&quot;./confirm.txt&quot;&gt;
+                            &lt;fieldset&gt;
+                                &lt;legend&gt;Personal Information&lt;/legend&gt;
+                                &lt;label for=&quot;name&quot;&gt;Full Name:&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;fullname&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;email&quot;&gt;Email:&lt;/label&gt;
+                                &lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;phone&quot;&gt;Phone Number:&lt;/label&gt;
+                                &lt;input type=&quot;tel&quot; id=&quot;phone&quot; name=&quot;phone&quot; required pattern=&quot;[0-9]{10}&quot;&gt;&lt;br&gt;&lt;br&gt;
+                            &lt;/fieldset&gt;
+                    
+                            &lt;br&gt;
+                    
+                            &lt;fieldset&gt;
+                                &lt;legend&gt;Job Details&lt;/legend&gt;
+                                &lt;label for=&quot;position&quot;&gt;Position Applied for:&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;position&quot; name=&quot;position&quot; value=&quot;Software Developer&quot; readonly&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;experience&quot;&gt;Years of Experience:&lt;/label&gt;
+                                &lt;input type=&quot;number&quot; id=&quot;experience&quot; name=&quot;experience&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;skills&quot;&gt;Technical Skills:&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; id=&quot;skills&quot; name=&quot;skills&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;location&quot;&gt;Preferred Location:&lt;/label&gt;
+                                &lt;select id=&quot;location&quot; name=&quot;location&quot; required&gt;
+                                    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+                                    &lt;option value=&quot;remote&quot; &gt;Remote&lt;/option&gt;
+                                    &lt;option value=&quot;onsite&quot;&gt;Onsite&lt;/option&gt;
+                                    
+                                &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+                    
+                                &lt;label for=&quot;resume&quot;&gt;Upload Resume:&lt;/label&gt;
+                                &lt;input type=&quot;file&quot; id=&quot;resume&quot; name=&quot;resume&quot; required&gt;&lt;br&gt;&lt;br&gt;
+                            &lt;/fieldset&gt;
+                    
+                            &lt;br&gt;
+                    
+                            &lt;input type=&quot;submit&quot; value=&quot;Submit Application&quot;&gt;
+                        &lt;/form&gt;
+                    
+                        &lt;p style=&quot;text-align: center; color: green;&quot;&gt;All The Best.&lt;/p&gt;
+                    &lt;/body&gt;
+                    &lt;/html&gt;
+                    </code>
+                    
+                </pre>
+
+    <h1>Git Commands Overview</h1>
+    <p>August 12, 2024</p>
+
+    <div class="qa">
+        <div class="question">1. What is the command for connecting a local repo and GitHub repo?</div>
+        <div class="answer">
+            The command to connect a local repository to a GitHub repository is:
+            <pre><code>git remote add origin &lt;repository-URL&gt;</code></pre>
+            Replace <code>&lt;repository-URL&gt;</code> with the URL of your GitHub repository.
+        </div>
+
+        <div class="question">2. Git command to change the directory of a local folder?</div>
+        <div class="answer">
+            To change the directory in your terminal or command prompt, use the following command:
+            <pre><code>cd /path/to/your/directory</code></pre>
+            Note: This is not a Git command but a basic command-line operation.
+        </div>
+
+        <div class="question">3. Git command to check the commits on the project?</div>
+        <div class="answer">
+            To see a log of all the commits made to the project, use the following command:
+            <pre><code>git log</code></pre>
+        </div>
+
+        <div class="question">4. Git command for pushing all the code to the ravi branch?</div>
+        <div class="answer">
+            To push your code to the <code>ravi</code> branch, use the following command:
+            <pre><code>git push origin ravi</code></pre>
+        </div>
+
+        <div class="question">5. Difference between the pull and push commands in Git?</div>
+        <div class="answer">
+            <b>git pull:</b> Fetches updates from the remote repository and merges them into your local branch.<br>
+            <b>git push:</b> Sends your local commits to the remote repository, updating it with your changes.<br>
+            <b>Key Difference:</b> <code>git pull</code> brings changes from the remote repo to your local repo, while <code>git push</code> sends your changes from your local repo to the remote repo.
+        </div>
+
+        <div class="question">6. Command to check the number of branches and command to switch the branch?</div>
+        <div class="answer">
+            <b>Check branches:</b>
+            <pre><code>git branch</code></pre>
+            <b>Switch to a branch:</b>
+            <pre><code>git checkout &lt;branch-name&gt;</code></pre>
+            Or, in newer Git versions:
+            <pre><code>git switch &lt;branch-name&gt;</code></pre>
+        </div>
+
+        <div class="question">7. What are the stages of our project to reach the GitHub repo?</div>
+        <div class="answer">
+            <ul>
+                <li><b>Working Directory:</b> Where you make changes to files.</li>
+                <li><b>Staging Area (Index):</b> Where you place files to be committed.</li>
+                <li><b>Local Repository:</b> Where commits are stored on your local machine.</li>
+                <li><b>Remote Repository (GitHub):</b> Where your commits are pushed and stored remotely.</li>
+            </ul>
+        </div>
+
+        <div class="question">8. The commands which we use in the staging area?</div>
+        <div class="answer">
+            <b>Add files to staging area:</b>
+            <pre><code>git add &lt;file-name&gt;</code></pre>
+            <b>Add all files:</b>
+            <pre><code>git add .</code></pre>
+            <b>Check status of the staging area:</b>
+            <pre><code>git status</code></pre>
+        </div>
+    </div>
+
