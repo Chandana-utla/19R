@@ -47,6 +47,8 @@ text-transform: capitalize;
 }
 body{
     background-image: url("17.jpeg");
+    background-size:no-repeat;
+    
 }
 /* #pre1{
     width: 300px;
