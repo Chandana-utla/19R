@@ -1,0 +1,75 @@
+body{
+    background-image: url("Dp.jpeg");
+}
+
+/* Container for the top logo and links */
+.container {
+    display: flex;
+    align-items: center;   /* Vertically center the logo and links */
+    justify-content: center; /* Horizontally center the content */
+    padding: 20px;
+    background-color: pink;
+}
+
+/* Style for the circular logo */
+.circular-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 20px; /* Space between the logo and the links */
+}
+
+/* Style for the links */
+.links a {
+    margin: 0 10px; /* Space between each link */
+    text-decoration: none;
+    color: #fff; /* Adjust the color as needed */
+    font-size: 18px; /* Adjust the size as needed */
+}
+
+.links a:hover {
+    color: #007BFF; /* Change color on hover */
+}
+
+/* Paragraph container */
+.para {
+    margin: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* First paragraph style */
+.p1 {
+    background-color: coral;
+    width: 40%;
+    padding: 15px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Second paragraph style */
+.p2 {
+    background-color: lightseagreen;
+    width: 55%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: #333;
+}
+
+/* Footer styling */
+footer {
+    background-color: rgb(110, 108, 127);
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin-top: 20px; /* Adds space between the paragraphs and the footer */
+}
+
+/* Adjust logo and links in the footer */
+footer .circular-logo {
+    margin: 0 10px; /* Space between the logo and links */
+}
