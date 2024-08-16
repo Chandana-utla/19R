@@ -1,0 +1,57 @@
+body{
+    background-image: url(./OIP.jpeg);
+
+}
+p{
+    background-color: black;
+    color: white;
+    position: relative;
+    left: 30px;
+    top: 30px;
+    right: 50px;
+    bottom: 20px;
+    
+
+}
+h3{
+    position: fixed;
+    background-color: white;
+}
+h5{
+    background-color: bisque;
+    position: absolute;
+    top:60px;
+    right: 50px;
+
+}
+#pdiv{
+    background-color:brown ;
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    top:40px;
+    left: 50px;
+}
+div{
+    background-color: burlywood;
+    /* position: absolute; */
+    position: relative;
+    top:180px;
+    width: 200px;
+    height: 270px;
+    left: 40px;
+}
+h4{
+    background-color: brown;
+    color: pink;
+    position: static;
+
+}
+.a{
+   position:sticky;
+   top: 350px;
+   right: 30px;
+   background-color: coral;
+   color: rgb(49, 47, 43);
+   border: 2px solid red;
+}

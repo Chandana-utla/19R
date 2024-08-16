@@ -1,0 +1,17 @@
+#img1{
+position: relative;
+
+z-index: 2;
+}
+#img2{
+position: fixed;
+/* top:30px;
+right: 40px; */
+z-index: 1;
+
+}
+#img3{
+position: absolute;
+/* top:150px; */
+z-index: 0;
+}
