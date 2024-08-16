@@ -1,0 +1,78 @@
+p{
+    width: 100%;
+    position: fixed;
+    top:0px;
+    position:sticky;
+    background-color: pink;
+    color:black;
+    padding: 10px 0;
+    z-index: 1000;
+    top: 0;
+    margin: 0;
+    height: 5rem;
+    text-align: center;
+    justify-content: space-between;
+    
+
+}
+#img1{
+    position:relative;
+    top: 72px;
+    height: 10rem;
+    width: 15rem;
+    left:10px;
+}
+#img2{
+    position:absolute;
+    top: 25rem;
+    height: 10rem;
+    width: 15rem;
+    left: 10px;
+}
+ #img3{
+    position: relative;
+    top: 33rem;
+    height: 12rem;
+    width: 15rem;
+    right: 14.5rem;
+}
+
+#img4
+{
+    position:relative;
+    left:40.5rem;
+    top: 5rem;
+    height: 10rem;
+    width: 15rem;
+}
+
+#img5{
+    position: absolute;
+    right:1rem;
+    height: 10rem;
+    width: 15rem;
+    top:25rem;
+
+}
+
+#img6{
+    position: absolute;
+    right: 1rem;
+    top:40rem;
+    height: 12rem;
+    width: 15rem;
+}
+
+#img7{
+    position: absolute;
+    left:28rem;
+    top:18rem;
+    height: 20rem;
+    width: 30rem;
+    border-radius: 20px;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
