@@ -1,0 +1,81 @@
+.c1{
+    background-color: pink;
+    height: 100px;
+    width: 200px;
+    transition-duration: 5s;
+    transition-delay: 2s;
+    transition-property:all;
+    transition-timing-function: linear;
+}
+.c1:hover{
+    width: 300px;
+    height:200px ;
+    background-color: red; 
+    border-radius: 75%;
+}
+.c2{
+    background-color: rgb(232, 139, 51);
+    height: 100px;
+    width: 200px;
+    transition-duration: 5s;
+    transition-property: background-color;
+    transition-delay: 2s;
+    transition-timing-function: ease-in;
+}
+.c2:hover{
+    width: 300px;
+    height:200px ;
+    background-color: rgb(22, 22, 21); 
+    border-radius: 75%;
+    /* transition-timing-function: ease-in; */
+}
+.c3{
+    background-color: rgb(25, 230, 110);
+    height: 100px;
+    width: 200px;
+    transition-duration: 5s;
+    transition-delay: 2s;
+    transition-timing-function:ease-out;
+}
+.c3:hover{
+    width: 300px;
+    height:200px ;
+    background-color: red; 
+    border-radius: 75%;
+   
+}
+.c4{
+    background-color: rgb(109, 102, 103);
+    height: 100px;
+    width: 200px;
+    border:  10px solid brown  ;
+    transition-duration: 5s;
+    transition-delay: 2s;
+    transition-timing-function: ease-in-out;
+}
+.c4:hover{
+    width: 300px;
+    height:200px ;
+    border:  10px solid black ;
+    transform: scale(2,2);
+    background-color: rgb(59, 26, 129); 
+    border-radius: 75%;
+   
+}
+.c5{
+    background-color: pink;
+    height: 100px;
+    width: 200px;
+    transition-duration: 5s;
+    transition-property: width;
+    transition-delay: 2s;
+    transition-timing-function:ease ;
+}
+.c5:hover{
+    width: 300px;
+    height:200px ;
+    transform: rotate(270deg);
+    background-color: red; 
+    border-radius: 75%;
+    
+} 
