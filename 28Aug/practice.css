@@ -1,0 +1,87 @@
+@media screen and (max-width:450px){
+
+    p{
+        background-color: aqua;
+        color:white;
+    }
+    h2{
+  background-color: pink;
+  color: brown;
+
+    }
+    a:hover{
+         width:30px;
+         height: 20px;
+         background-color: purple;
+         color: white; 
+         border-radius: 30px;
+    }
+    img{
+ width:200px;
+ transition:all ease-in-out 4s 2s;
+    }
+    img:hover{
+        width: 300px;
+        transition: all ease-in-out 4s 2s;
+        border-radius: 50%;
+
+    }
+}
+@media screen and (min-width:451px) and (max-width:800px){
+
+    p{
+        background-color: rgb(93, 24, 45);
+        color:rgb(82, 79, 96);
+    }
+    h2{
+  background-color: rgba(196, 32, 130, 0);
+  color: brown;
+
+    }
+    a:hover{
+         width:30px;
+         height: 20px;
+         background-color: purple;
+         color: rgb(166, 155, 155); 
+         border-radius: 30px;
+    }
+    img{
+ width: 500px;
+ transition:all ease-in-out 4s 2s;
+    }
+    img:hover{
+        width: 750px;
+        transition: all ease-in-out 4s 3s;
+        border-radius: 75%;
+        
+    }
+}
+@media screen and (min-width:801px) and (max-width:1024px){
+
+    p{
+        background-color: rgb(192, 184, 43);
+        color:white;
+    }
+    h2{
+  background-color: rgb(13, 194, 49);
+  color: rgb(34, 78, 122);
+
+    }
+    a:hover{
+         width:30px;
+         height: 20px;
+         background-color: rgb(178, 34, 92);
+         color: white; 
+         border-radius: 30px;
+    }
+    img{
+ width:700px;
+ transition:all ease-in-out 4s 2s;
+    }
+    img:hover{
+        width: 900px;
+        transition: all ease-in-out 4s 2s;
+        border-radius: 25%;
+        
+    }
+}
