@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 600px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+h1 {
+    color: #FF6600;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.fire-icon {
+    margin-right: 10px;
+}
+
+
+.filter-container {
+    display: flex;
+    align-items: center;
+}
+
+.filter-container p {
+    margin: 0;
+    margin-right: 5px; 
+}
+
+.filter-container img {
+    cursor: pointer;
+}
+
+.sellers-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.seller-card {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.seller-card:hover {
+    transform: scale(1.05);
+    background-color: #ddd;
+}
+
+.seller-card img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.seller-info h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.seller-info p {
+    margin: 0;
+    color: #777;
+}

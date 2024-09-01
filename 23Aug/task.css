@@ -1,0 +1,84 @@
+.h5{
+    text-transform: uppercase;
+    color:white;
+    background-color: blue;
+}
+.h2{
+    color:white;
+    font-weight: bold;
+    /* font-display: ; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: blue;
+}
+*{
+    background-color: blue;
+}
+button:hover{
+    background-color: blue;
+    width: 20px;
+    height: 20px;
+}
+.container{
+    display:flex;
+    /* text-align: center;
+     */
+     justify-content: center;
+     /* align-items: center; */
+     /* text-align: center; */
+}
+.one{
+    /* display: flex;  */
+    background-color: white;
+    border: 2px solid black;
+    height: 19rem;
+    width:10rem;
+    text-wrap: wrap;
+    border-radius: 7%;
+    text-align: center;
+    /* gap:20px blue; */
+}
+.two{
+    margin-left: 50px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    height: 22rem;
+    width:10rem;
+    text-wrap: wrap;
+    border-radius: 7%;
+}
+.three{
+    margin-left: 80px;
+    text-align: center;
+    background-color: white;
+    border: 2px solid black;
+    height: 19rem;
+    width:10rem;
+    text-wrap: wrap;
+    border-radius: 7%;
+}
+p{
+    /* display: inline-flex; */
+    background-color: white;
+}
+a{
+    background-color: white;
+}
+a:hover{
+    width: 30px;
+    height: 20px;
+    background-color:blue;
+    color: white;
+}
+/* #MP{
+    background-color: wheat;
+    unicode-bidi: isolate;
+} */
+ .package{
+    text-transform: capitalize;
+    color: gold;
+    font-weight: 20px;
+ }
+ .emojii{
+    font-size: large;
+ }

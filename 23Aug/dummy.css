@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.pricing-container {
+    background-color: #007bff;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+.pricing-container h1 {
+    margin-bottom: 30px;
+    font-size: 2rem;
+}
+
+.plans {
+    display: flex;
+    justify-content: space-around;
+}
+
+.plan {
+    background-color: white;
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 28%;
+    text-align: center;
+}
+
+.plan .emoji {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.plan h2 {
+    margin: 10px 0;
+}
+
+.price {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #007bff;
+}
+
+.plan p {
+    margin: 10px 0;
+}
+
+.plan button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.most-popular {
+    border: 2px solid #007bff;
+    padding: 18px;
+}
+
+.most-popular h2::before {
+    content: "Most Popular";
+    display: block;
+    font-size: 0.8rem;
+    color: #007bff;
+    margin-bottom: 5px;
+    font-weight: bold;
+}

@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+}
+
+.header {
+    background-color: #f0c040;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .tagline {
+    font-size: 14px;
+    font-weight: normal;
+    margin-top: 20px; /* Add margin-top for spacing */
+}
+
+.main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 20px;
+    gap: 20px;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    max-width: 100%;
+    height: 420px;
+
+    
+    border-radius: 10px;
+}
+
+.prices {
+    display: grid;
+    gap: 10px;
+}
+
+.price-item {
+    background-color: #ffd700;
+    color: #000;
+    text-align: center;
+    padding: 20px;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.price-item span {
+    display: block;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+.footer {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    background-color: #f0c040;
+    gap:20px;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.nav-link {
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    background-color:chartreuse;
+    padding: 10px;
+    border-radius: 5px;
+}

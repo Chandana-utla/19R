@@ -1,0 +1,85 @@
+.grid-container {
+    display: grid;
+    grid: 150px / auto auto auto;
+    grid:
+    'myArea myArea .'
+    'myArea myArea . ';
+    grid-gap: 10px;
+    background-color: #d7d39ee5;
+    padding: 10px;
+
+  }
+  
+  .grid-container > div {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    text-align: center;
+    padding: 20px 0;
+    font-size: 30px;
+  }
+  .one{
+    grid-area:myArea;
+    background-color: antiquewhite;
+  }
+  .four,.two,.three,.five,.six
+  {
+    background-color: yellow;
+
+  }
+    
+  .grid-con > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 100px 0;
+    font-size: 30px;
+  }
+ 
+  .grid-con {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: wheat;
+    padding: 10px;
+    grid-gap: 10px;
+}
+
+.one1, .two2, .three3, .four4, .five5,.six6 {
+    flex: 1 1 20%; /* Adjust the percentage as needed */
+    box-sizing: border-box;
+    border: 1px solid rgb(241, 236, 236); /* Just for visualization */
+}
+
+/* .four4 {
+    display: none; /* Hide the four4 div */
+} */
+
+.six6 {
+    /* flex: 1 1 100%; Make five5 take the full width */
+    height: 30px;
+    width: 60px;
+}
+
+  img{
+    object-fit: fill;
+    height: 60vh;
+    width: 70vh;
+    padding:0px;
+  }
+  .gridcon {
+    display: grid;
+    grid: 500px /auto auto auto;
+    grid-gap: 10px;
+    background-color: #2196F3;
+    padding: 10px;
+
+  }
+  
+  .gridcon > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 20px 0;
+    /* font-size: 30px; */
+  }
+  .para{
+    position:absolute;
+    padding-left: 2px;
+  }
+  

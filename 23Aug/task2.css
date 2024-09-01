@@ -1,0 +1,46 @@
+img {
+    border-radius: 75%;
+    height: 160px;
+    width: 160px;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.Sellers {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    padding: 10px;
+    margin: 10px;
+    border: 2px solid black;
+    transition: transform 0.8s;
+    width: 20%; /* Adjust width to fit two items per row */
+}
+#p1{
+    display: inline;
+}
+
+.Sellers img {
+    width: 100px;
+    height: 100px;
+}
+
+.Sellers p {
+    margin: 0;
+    padding: 0 10px;
+}
+
+.parent {
+    width: 100%;
+    box-shadow: 2px solid black;
+    padding: 20px;
+    background-color: aqua;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border: 2px solid black;
+}
