@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent{
+            /* height: 1000px; */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .child{
+            border: 2px solid black;
+            flex: 1 1 45%;
+            padding: 10px;
+            width: 300px;
+            height: 300px;
+            text-align: center;
+        }
+        .child>img{
+            width: 100%;
+            height: 80%;
+        }
+        .child p{
+            font-size: 0.8rem;
+        }
+        .child span{
+            font-size: 0.6rem;
+        }
+        #one{
+            background-color: yellow;
+        }
+        @media screen  and (max-width:450px) 
+        {
+            .parent{
+                flex-direction:column;
+                
+            }
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child one">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        <div class="child">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        <div class="child">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        <div class="child">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        <div class="child">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        <div class="child">
+            <img src="download.jpeg" alt="">
+            <p>BB</p>
+            <p>2 Cr</p>
+        </div>
+        
+        
+    </div>
+</body>
+</html>
