@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Firebase File Upload</title>
+</head>
+<body>
+    <h1>Upload Content</h1>
+    <form id="contentForm">
+        <label for="creatorName">Your Name:</label>
+        <input type="text" id="creatorName" placeholder="Enter your name" oninput="updateUserName()">
+        <p id="userNameDisplay">User</p>
+        
+        <label for="creatorThoughts">Your Thoughts:</label>
+        <textarea id="creatorThoughts" placeholder="Write your thoughts..." oninput="autoExpand(this)"></textarea>
+        
+        <label for="contentFile">Upload File:</label>
+        <input type="file" id="contentFile">
+        
+        <button type="button" onclick="uploadContent()">Upload</button>
+    </form>
+    
+    <!-- Firebase Libraries -->
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js"></script>
+    
+    <!-- Custom Script -->
+    <script src="chari.js"></script>
+</body>
+</html>
