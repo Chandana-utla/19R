@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        .container {
+            text-align: center;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            padding: 30px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Are you a Content Creator or just Browsing?</h1>
+        <button id="creator">I'm a Content Creator</button>
+        <button id="browsing">Just Browsing</button>
+    </div>
+
+    <script>
+        // JavaScript for routing based on user choice
+        document.getElementById("creator").addEventListener("click", function() {
+            window.location.href = "content.html"; // Change to the route for content creators
+        });
+
+        document.getElementById("browsing").addEventListener("click", function() {
+            window.location.href = "justBrowsing.html"; // Change to the route for browsing
+        });
+    </script>
+</body>
+</html>
