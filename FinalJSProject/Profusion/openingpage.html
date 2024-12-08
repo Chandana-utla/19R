@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profusion</title>
+    
+    <!-- Importing Elegant Fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #1a1a1a, #3a3a3a); /* Elegant dark gradient */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Lora', serif; /* Elegant Serif Font */
+        }
+
+        h1 {
+            font-size: 100px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            color: #fff; /* Luxurious white text */
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 8px;
+        }
+
+        h1 span {
+            opacity: 0;
+            display: inline-block;
+            animation: reveal 1.5s forwards, transformEffect 2s infinite alternate;
+            transition: all 0.5s ease-in-out;
+        }
+
+        h1 span:nth-child(odd) {
+            animation-delay: 0.3s;
+        }
+
+        h1 span:nth-child(even) {
+            animation-delay: 0.5s;
+        }
+
+        /* Fade-in effect */
+        @keyframes reveal {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Elegant color and transformation effect */
+        @keyframes transformEffect {
+            0% {
+                transform: scale(0.6);
+                color: #f1c40f; /* Elegant gold */
+            }
+            100% {
+                transform: scale(1);
+                color: #e0e0e0; /* Classy light gray */
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <h1 id="title">
+        <span>P</span>
+        <span>r</span>
+        <span>o</span>
+        <span>f</span>
+        <span>u</span>
+        <span>s</span>
+        <span>i</span>
+        <span>o</span>
+        <span>n</span>
+    </h1>
+
+    <script>
+        // JavaScript to enhance text animation if needed
+        document.addEventListener("DOMContentLoaded", () => {
+            const title = document.getElementById("title");
+            const letters = title.querySelectorAll("span");
+            
+            // Adding a slight delay for each letter, one by one
+            letters.forEach((letter, index) => {
+                letter.style.animationDelay = `${index * 0.2}s`;
+            });
+        });
+        setTimeout(() => {
+            // Redirect to a new page (e.g., new-page.html)
+            window.location.href = "login.html";
+        }, 5000);  
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <style>
+        body {
+            background-image: url("images/download\\ \\(1\\).jpeg.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #dataSection {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 20px 8px rgb(70, 20, 20);
+            text-align: center;
+            width: 100%;
+            max-width: 800px;
+            margin-top: 50px;
+            opacity: 0.9;
+            background: transparent;
+            color: rgb(70, 20, 20);
+        }
+
+        .user-card {
+            border: 1px solid rgb(70, 20, 20);
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.8);
+            color: rgb(70, 20, 20);
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-card h3 {
+            margin: 0;
+        }
+
+        .user-card p {
+            margin: 5px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: blue;
+            font-weight: bold;
+        }
+
+        a:hover {
+            color: darkblue;
+        }
+
+        .file-preview {
+            margin-top: 10px;
+        }
+
+        .file-preview img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .file-preview iframe {
+            width: 100%;
+            height: 400px;
+        }
+
+        @media (max-width: 400px) {
+            #dataSection {
+                width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="dataSection">
+        <h1>User Data</h1>
+        <div id="userDataDisplay"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+        // Firebase Configuration (Same as on your main page)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDHEcml3aP5X8H6iY3qNnjmoIYKE6WZ4Cc",
+            authDomain: "profusion-55ee5.firebaseapp.com",
+            projectId: "profusion-55ee5",
+            storageBucket: "profusion-55ee5.appspot.com",
+            messagingSenderId: "705597166854",
+            appId: "1:705597166854:web:f714caa1b9141a93353a87"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Fetch and display data
+        async function displayUserData() {
+            const displayDiv = document.getElementById('userDataDisplay');
+            displayDiv.innerHTML = ""; // Clear previous data
+
+            try {
+                // Fetch data from Firestore
+                const querySnapshot = await db.collection("contents").get();
+                const firebaseData = querySnapshot.docs.map(doc => doc.data());
+
+                // Fetch file data from local storage
+                const localFiles = JSON.parse(localStorage.getItem('uploadedFiles')) || [];
+
+                // Combine data
+                firebaseData.forEach((data, index) => {
+                    const userCard = document.createElement('div');
+                    userCard.className = 'user-card';
+
+                    // Add user details
+                    const nameElem = document.createElement('h3');
+                    nameElem.textContent = `Name: ${data.creatorName}`;
+
+                    const thoughtsElem = document.createElement('p');
+                    thoughtsElem.textContent = `Thoughts: ${data.thoughts}`;
+
+                    const timestampElem = document.createElement('small');
+                    timestampElem.textContent = `Posted on: ${new Date(data.timestamp).toLocaleString()}`;
+
+                    userCard.appendChild(nameElem);
+                    userCard.appendChild(thoughtsElem);
+                    userCard.appendChild(timestampElem);
+
+                    // Attach file data if available
+                    const fileData = localFiles[index];
+                    if (fileData) {
+                        const filePreviewDiv = document.createElement('div');
+                        filePreviewDiv.className = 'file-preview';
+
+                        // Check file type and display accordingly
+                        const fileExtension = fileData.fileName.split('.').pop().toLowerCase();
+                        if (['jpg', 'jpeg', 'png', 'gif'].includes(fileExtension)) {
+                            // Display image
+                            const imgElement = document.createElement('img');
+                            imgElement.src = fileData.fileData;
+                            filePreviewDiv.appendChild(imgElement);
+                        } else if (fileExtension === 'pdf') {
+                            // Display PDF
+                            const iframeElement = document.createElement('iframe');
+                            iframeElement.src = fileData.fileData;
+                            filePreviewDiv.appendChild(iframeElement);
+                        } else {
+                            // For other file types, provide a download link
+                            const fileLink = document.createElement('a');
+                            fileLink.href = fileData.fileData;
+                            fileLink.textContent = `Download File: ${fileData.fileName}`;
+                            fileLink.download = fileData.fileName;
+                            filePreviewDiv.appendChild(fileLink);
+                        }
+
+                        userCard.appendChild(filePreviewDiv);
+                    }
+
+                    displayDiv.appendChild(userCard);
+                });
+
+                if (firebaseData.length === 0) {
+                    const noDataMessage = document.createElement('p');
+                    noDataMessage.textContent = "No user data available!";
+                    displayDiv.appendChild(noDataMessage);
+                }
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+                alert("Failed to fetch user data. Please try again.");
+            }
+        }
+
+        // Call the function to display data
+        displayUserData();
+    </script>
+</body>
+</html>
