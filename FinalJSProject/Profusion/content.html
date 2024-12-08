@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-   \<style>
+   <style>
     body {
     font-family: 'Roboto', sans-serif;
     background-image: url("images/download\ \(1\).jpeg.jpg");
@@ -22,7 +22,7 @@
     margin: 0;
 }
 
-/* Container Styling */
+
 .container {
     background: transparent;
     padding: 30px;
@@ -35,7 +35,7 @@
     opacity: 0.8;
 }
 
-/* Title Styling */
+
 h1 {
     font-size: 24px;
     color: rgb(70, 20, 20);
@@ -43,14 +43,14 @@ h1 {
     font-weight: bold;
 }
 
-/* Subtitle Text Styling */
+
 p {
     font-size: 18px;
     color: rgba(70, 20, 20, 0.8);
     margin-bottom: 20px;
 }
 
-/* Dropdown Styling */
+
 select {
     width: 100%;
     padding: 10px;
@@ -74,7 +74,7 @@ select:focus {
     border-color: rgb(90, 25, 25);
 }
 
-/* Button Styling */
+
 .button {
     padding: 10px 20px;
     font-size: 16px;
@@ -98,7 +98,7 @@ select:focus {
     background-color: rgb(110, 30, 30);
 }
 
-/* Result Message Styling */
+
 #result {
     display: none;
     margin-top: 20px;
@@ -112,7 +112,7 @@ select:focus {
     background: rgba(245, 245, 245, 0.9);
 }
 
-/* Mobile Responsiveness */
+
 @media (max-width: 400px) {
     .container {
         width: 90%;
@@ -165,7 +165,7 @@ select:focus {
         if (contentZone === "") {
             alert("Please select a content zone.");
         } else {
-            // Redirect to cc2.html with the selected zone as a query parameter
+           
             window.location.href = `CC2.html?zone=${encodeURIComponent(contentZone)}`;
         }
     }
