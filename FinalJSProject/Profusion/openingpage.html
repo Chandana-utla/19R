@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profusion</title>
     
-    <!-- Importing Elegant Fonts from Google Fonts -->
+   
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lora:wght@700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            background: linear-gradient(135deg, #1a1a1a, #3a3a3a); /* Elegant dark gradient */
+            background: linear-gradient(135deg, #1a1a1a, #3a3a3a); 
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            font-family: 'Lora', serif; /* Elegant Serif Font */
+            font-family: 'Lora', serif;
         }
 
         h1 {
@@ -26,7 +26,7 @@
             justify-content: center;
             align-items: center;
             margin: 0;
-            color: #fff; /* Luxurious white text */
+            color: #fff; 
             overflow: hidden;
             text-transform: uppercase;
             letter-spacing: 8px;
@@ -47,22 +47,22 @@
             animation-delay: 0.5s;
         }
 
-        /* Fade-in effect */
+       
         @keyframes reveal {
             to {
                 opacity: 1;
             }
         }
 
-        /* Elegant color and transformation effect */
+      
         @keyframes transformEffect {
             0% {
                 transform: scale(0.6);
-                color: #f1c40f; /* Elegant gold */
+                color: #f1c40f; 
             }
             100% {
                 transform: scale(1);
-                color: #e0e0e0; /* Classy light gray */
+                color: #e0e0e0;
             }
         }
 
@@ -83,18 +83,18 @@
     </h1>
 
     <script>
-        // JavaScript to enhance text animation if needed
+      
         document.addEventListener("DOMContentLoaded", () => {
             const title = document.getElementById("title");
             const letters = title.querySelectorAll("span");
             
-            // Adding a slight delay for each letter, one by one
+           
             letters.forEach((letter, index) => {
                 letter.style.animationDelay = `${index * 0.2}s`;
             });
         });
         setTimeout(() => {
-            // Redirect to a new page (e.g., new-page.html)
+         
             window.location.href = "login.html";
         }, 5000);  
     </script>
