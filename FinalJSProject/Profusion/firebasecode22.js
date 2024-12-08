@@ -1,4 +1,4 @@
-// Firebase Configuration (Replace these values with your Firebase project settings)
+
 const firebaseConfig = {
     apiKey: "AIzaSyDHEcml3aP5X8H6iY3qNnjmoIYKE6WZ4Cc",
     authDomain: "profusion-55ee5.firebaseapp.com",
@@ -8,11 +8,10 @@ const firebaseConfig = {
     appId: "1:705597166854:web:f714caa1b9141a93353a87"
 };
 
-// Initialize Firebase (No need for import or export, using the Firebase global object)
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
-// Functions to interact with the form
+
 function updateUserName() {
     const nameInput = document.getElementById('creatorName').value;
     const userNameDisplay = document.getElementById('userNameDisplay');
@@ -53,7 +52,7 @@ async function uploadContent() {
     let fileURL = null;
 
     if (file) {
-        // Store the file in the browser's localStorage
+       
         const reader = new FileReader();
         reader.onload = function (event) {
             localStorage.setItem("uploadedFile", JSON.stringify({
@@ -61,25 +60,25 @@ async function uploadContent() {
                 fileContent: event.target.result
             }));
         };
-        reader.readAsDataURL(file); // Read file as a base64 URL for storage
+        reader.readAsDataURL(file); 
         fileName = file.name;
         fileURL = "File stored locally";
     }
 
-    // Prepare content data without the file
+   
     const contentData = {
         creatorName,
         thoughts: userThoughts,
-        fileName, // Save the file name in Firestore
-        fileURL, // Indicate that the file is stored locally
+        fileName, 
+        fileURL, 
         timestamp: new Date().toISOString(),
     };
 
     try {
-        // Store other data in Firebase Firestore
+        
         await db.collection("contents").add(contentData);
         
-        // Reset form inputs
+  
         creatorNameInput.value = "";
         thoughtsInput.value = "";
         fileInput.value = "";
