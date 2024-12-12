@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data</title>
+    <style>
+      
+        body {
+   
+    background-image: url('C:\Users\Chandana\OneDrive\Desktop\Profusion\images\green.png');
+   
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+
+        #dataSection {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            width: 90%;
+            max-width: 800px;
+            opacity: 0.98;
+        }
+
+        #dataSection h1 {
+            font-size: 2rem;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        .user-card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            background: #fafafa;
+            color: #555;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .user-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .user-card h3 {
+            margin: 0 0 10px;
+            font-size: 1.2rem;
+            color: #222;
+        }
+
+        .user-card p {
+            margin: 10px 0;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .user-card small {
+            display: block;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        @media (max-width: 768px) {
+            .user-card {
+                padding: 15px;
+            }
+
+            #dataSection {
+                padding: 20px;
+            }
+
+            #dataSection h1 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            #dataSection {
+                width: 95%;
+            }
+
+            .user-card {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="dataSection">
+        <h1>User Data</h1>
+        <div id="userDataDisplay"></div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-firestore.js"></script>
+    <script>
+        // Firebase Configuration (Same as on your main page)
+        const firebaseConfig = {
+            apiKey: "AIzaSyDHEcml3aP5X8H6iY3qNnjmoIYKE6WZ4Cc",
+            authDomain: "profusion-55ee5.firebaseapp.com",
+            projectId: "profusion-55ee5",
+            storageBucket: "profusion-55ee5.appspot.com",
+            messagingSenderId: "705597166854",
+            appId: "1:705597166854:web:f714caa1b9141a93353a87"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+
+        // Fetch and display data
+        async function displayUserData() {
+            const displayDiv = document.getElementById('userDataDisplay');
+            displayDiv.innerHTML = ""; // Clear previous data
+
+            try {
+                // Fetch data from Firestore
+                const querySnapshot = await db.collection("contents").get();
+                const firebaseData = querySnapshot.docs.map(doc => doc.data());
+
+                firebaseData.forEach((data) => {
+                    const userCard = document.createElement('div');
+                    userCard.className = 'user-card';
+
+                    // Add user details
+                    const nameElem = document.createElement('h3');
+                    nameElem.textContent = `Name: ${data.creatorName}`;
+
+                    const thoughtsElem = document.createElement('p');
+                    thoughtsElem.textContent = `Thoughts: ${data.thoughts}`;
+
+                    const timestampElem = document.createElement('small');
+                    timestampElem.textContent = `Posted on: ${new Date(data.timestamp).toLocaleString()}`;
+
+                    userCard.appendChild(nameElem);
+                    userCard.appendChild(thoughtsElem);
+                    userCard.appendChild(timestampElem);
+
+                    displayDiv.appendChild(userCard);
+                });
+
+                if (firebaseData.length === 0) {
+                    const noDataMessage = document.createElement('p');
+                    noDataMessage.textContent = "No user data available!";
+                    displayDiv.appendChild(noDataMessage);
+                }
+            } catch (error) {
+                console.error("Error fetching user data:", error);
+                alert("Failed to fetch user data. Please try again.");
+            }
+        }
+
+        // Call the function to display data
+        displayUserData();
+    </script>
+</body>
+</html>
