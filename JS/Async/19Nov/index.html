@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript Examples</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 20px;
+        }
+        #countdown, #clock {
+            font-size: 24px;
+            margin: 20px;
+        }
+        #output {
+            font-size: 18px;
+            color: blue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+  
+    
+    <h2>Promise Chaining: BookMyShow</h2>
+    <button id="bookMovie">Book Movie</button>
+    <div id="movieOutput"></div>
+    
+    <h2>Promise Chaining: Uber Booking</h2>
+    <button id="bookUber">Book Uber</button>
+    <div id="uberOutput"></div>
+    
+    <script>
+       
+        function enterApp() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent = "Entered BookMyShow App";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function selectDate() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent += " -> Date Selected";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function selectTheatre() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent += " -> Theatre Selected";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function selectMovie() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent += " -> Movie Selected";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function selectSeat() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent += " -> Seat Selected";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function pay() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("movieOutput").textContent += " -> Payment Successful";
+                }, 1000);
+            });
+        }
+
+        document.getElementById("bookMovie").addEventListener("click", () => {
+            enterApp()
+                .then(selectDate)
+                .then(selectTheatre)
+                .then(selectMovie)
+                .then(selectSeat)
+                .then(pay);
+        });
+
+       
+        function riderComing() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("uberOutput").textContent = "Rider is Coming";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function reachedPickup() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("uberOutput").textContent += " -> Reached Pickup Point";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function startJourney() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("uberOutput").textContent += " -> Picked Up, Journey Started";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function journeyProgress() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("uberOutput").textContent += " -> 15 min Journey";
+                    resolve();
+                }, 1000);
+            });
+        }
+
+        function dropOff() {
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById("uberOutput").textContent += " -> Dropped at Destination";
+                }, 1000);
+            });
+        }
+
+        document.getElementById("bookUber").addEventListener("click", () => {
+            riderComing()
+                .then(reachedPickup)
+                .then(startJourney)
+                .then(journeyProgress)
+                .then(dropOff);
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>setTimeout & setInterval Examples</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 20px;
+        }
+        #countdown, #clock {
+            font-size: 24px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h2>setTimeout Examples</h2>
+    <div id="colorBox"></div>
+    <button id="changeColorBtn">Start Background Change</button>
+    
+    <button id="welcomeBtn">Show Welcome Message</button>
+    
+    <h2>setInterval Examples</h2>
+    <div id="countdown">10</div>
+    <button id="startCountdown">Start Countdown</button>
+    
+    <div id="clock"></div>
+    
+    <script>
+      
+        function changeColor() {
+            setTimeout(() => {
+                document.getElementById("colorBox").style.backgroundColor = "blue";
+            }, 5000);
+        }
+        document.getElementById("changeColorBtn").addEventListener("click", changeColor);
+        
+       
+        let welcomeTimeout;
+        document.getElementById("welcomeBtn").addEventListener("click", () => {
+            clearTimeout(welcomeTimeout);
+            welcomeTimeout = setTimeout(() => {
+                alert("Welcome!");
+            }, 2000);
+        });
+        
+       
+        document.getElementById("startCountdown").addEventListener("click", () => {
+            let count = 10;
+            const countdownElement = document.getElementById("countdown");
+            countdownElement.textContent = count;
+            
+            const interval = setInterval(() => {
+                count--;
+                countdownElement.textContent = count;
+                if (count === 0) {
+                    clearInterval(interval);
+                    countdownElement.textContent = "Time's up!";
+                }
+            }, 1000);
+        });
+        
+       
+        function updateClock() {
+            const clockElement = document.getElementById("clock");
+            setInterval(() => {
+                const now = new Date();
+                const hours = now.getHours().toString().padStart(2, '0');
+                const minutes = now.getMinutes().toString().padStart(2, '0');
+                const seconds = now.getSeconds().toString().padStart(2, '0');
+                clockElement.textContent = `${hours}:${minutes}:${seconds}`;
+            }, 1000);
+        }
+        updateClock();
+    </script>
+</body>
+</html>

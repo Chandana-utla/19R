@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript Examples</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 20px;
+        }
+        #countdown, #clock {
+            font-size: 24px;
+            margin: 20px;
+        }
+        #output {
+            font-size: 18px;
+            color: blue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+  
+    
+    <h2>Callback Function Example</h2>
+    <button id="runCallback">click</button>
+    <div id="callbackOutput"></div>
+    
+    <h2>this Keyword Example</h2>
+    <button id="runThisExample">click</button>
+    <div id="thisOutput"></div>
+    
+    <script>
+       
+        function greet(name, callback) {
+            document.getElementById("callbackOutput").textContent = "Hello, " + name;
+            callback();
+        }
+        function showMessage() {
+            document.getElementById("callbackOutput").textContent += " This is a callback function.";
+        }
+        document.getElementById("runCallback").addEventListener("click", () => {
+            greet("Chandana", showMessage);
+        });
+
+      
+        const person = {
+            name: "chandu",
+            greet: function() {
+                document.getElementById("thisOutput").textContent = `Hello, my name is ${this.name}`;
+            }
+        };
+        document.getElementById("runThisExample").addEventListener("click", () => {
+            person.greet();
+        });
+
+       
+       
+        
+      
+    </script>
+</body>
+</html>

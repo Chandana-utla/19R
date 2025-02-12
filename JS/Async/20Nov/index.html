@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous JavaScript Examples</title>
+    <style>
+        #colorBox {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 20px;
+        }
+        #countdown, #clock {
+            font-size: 24px;
+            margin: 20px;
+        }
+        #output, #products {
+            font-size: 18px;
+            color: blue;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h2>Fetch and Filter Data from FakeStoreAPI</h2>
+    <button id="fetchProducts">Fetch Products</button>
+    <div id="message"></div> 
+    <ul id="products"></ul>
+    
+    <script>
+        async function fetchProducts() {
+            try {
+                const response = await fetch('https://fakestoreapi.com/products');
+                const products = await response.json();
+                
+                const filteredProducts = products.filter(product => product.rating.rate > 3.0 && product.price > 20);
+                
+                const productList = document.getElementById("products");
+                const messageBox = document.getElementById("message");
+                
+                productList.innerHTML = "";
+                messageBox.textContent = ""; 
+
+                if (filteredProducts.length === 0) {
+                    messageBox.textContent = "No products found with rating > 3.5 and price > 200.";
+                    return;
+                }
+
+                filteredProducts.forEach(product => {
+                    const li = document.createElement("li");
+                    li.innerHTML = `${product.title}- ${product.price} - ${product.rating.rate}`;
+                    productList.appendChild(li);
+                });
+            } catch (error) {
+                console.error("Error fetching products:", error);
+            }
+        }
+
+        document.getElementById("fetchProducts").addEventListener("click", fetchProducts);
+    </script>
+</body>
+</html>
